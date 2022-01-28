@@ -9,10 +9,19 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: ['16.13.1']
+
     steps:
       - uses: actions/checkout@v2
-      - name: Install dependencies
-        uses: actions/setup-node@v16.13.1
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+
       - name: Install dependencies
         run: npm install
       - name: Deploy to GH Pages
