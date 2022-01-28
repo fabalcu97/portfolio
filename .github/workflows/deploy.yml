@@ -1,0 +1,19 @@
+name: Portfolio deploy
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        uses: actions/setup-node@v16.13.1
+      - name: Install dependencies
+        run: npm install
+      - name: Deploy to GH Pages
+        run: npm run deploy
