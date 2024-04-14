@@ -1,7 +1,7 @@
 "use client";
 import {useEffect, useMemo, useState} from "react";
 import Particles, {initParticlesEngine} from "@tsparticles/react";
-import {loadAll} from "@tsparticles/all";
+import {loadSlim} from "@tsparticles/slim";
 import {IParticlesOptions} from "@tsparticles/engine";
 import Image from "next/image";
 
@@ -10,7 +10,7 @@ export default function App() {
 
     useEffect(() => {
         initParticlesEngine(async (engine) => {
-            await loadAll(engine);
+            await loadSlim(engine);
         }).then(() => {
             setInit(true);
         });
