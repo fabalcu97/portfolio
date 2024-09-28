@@ -9,7 +9,8 @@
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --check . && eslint .",
-		"format": "prettier --write ."
+		"format": "prettier --write .",
+		"typegen": "pnpx pocketbase-typegen --env --out src/types/pocketbase.d.ts"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^3.0.0",
@@ -35,7 +36,9 @@
 	"dependencies": {
 		"@tsparticles/engine": "^3.5.0",
 		"@tsparticles/slim": "^3.5.0",
-		"@tsparticles/svelte": "^3.1.1"
+		"@tsparticles/svelte": "^3.1.1",
+		"@zerodevx/svelte-toast": "^0.9.6",
+		"pocketbase": "^0.21.5"
 	},
 	"engines": {
 		"node": "20.x"

@@ -17,6 +17,12 @@ importers:
       '@tsparticles/svelte':
         specifier: ^3.1.1
         version: 3.1.1(svelte@5.0.0-next.260)
+      '@zerodevx/svelte-toast':
+        specifier: ^0.9.6
+        version: 0.9.6(svelte@5.0.0-next.260)
+      pocketbase:
+        specifier: ^0.21.5
+        version: 0.21.5
     devDependencies:
       '@sveltejs/adapter-auto':
         specifier: ^3.0.0
@@ -585,6 +591,11 @@ packages:
   '@typescript-eslint/visitor-keys@8.7.0':
     resolution: {integrity: sha512-b1tx0orFCCh/THWPQa2ZwWzvOeyzzp36vkJYOpVg0u8UVOIsfVrnuC9FqAw9gRKn+rG2VmWQ/zDJZzkxUnj/XQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+
+  '@zerodevx/svelte-toast@0.9.6':
+    resolution: {integrity: sha512-nHlTrCjverlPK9yukK6fqbG3e/R+f10ldrc4nJHOe2qNDScuPTuYVSFEk2dDDtzWAwTN5pmdEXgA3M2RbT8jiw==}
+    peerDependencies:
+      svelte: ^3.57.0 || ^4.0.0 || ^5.0.0
 
   acorn-jsx@5.3.2:
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
@@ -1161,6 +1172,9 @@ packages:
   pirates@4.0.6:
     resolution: {integrity: sha512-saLsH7WeYYPiD25LDuLRRY/i+6HaPYr6G1OUlN39otzkSTxKnubR9RTxS3/Kk50s1g2JTgFwWQDQyplC5/SHZg==}
     engines: {node: '>= 6'}
+
+  pocketbase@0.21.5:
+    resolution: {integrity: sha512-bnI/uinnQps+ElSlzxkc4yvwuSFfKcoszDtXH/4QT2FhGq2mJVUvDlxn+rjRXVntUjPfmMG5LEPZ1eGqV6ssog==}
 
   postcss-import@15.1.0:
     resolution: {integrity: sha512-hpr+J05B2FVYUAXHeK1YyI267J/dDDhMU6B6civm8hSY1jYJnBXxzKDKDswzJmtLHryrjhnDjqqp/49t8FALew==}
@@ -2018,6 +2032,10 @@ snapshots:
       '@typescript-eslint/types': 8.7.0
       eslint-visitor-keys: 3.4.3
 
+  '@zerodevx/svelte-toast@0.9.6(svelte@5.0.0-next.260)':
+    dependencies:
+      svelte: 5.0.0-next.260
+
   acorn-jsx@5.3.2(acorn@8.12.1):
     dependencies:
       acorn: 8.12.1
@@ -2569,6 +2587,8 @@ snapshots:
   pify@2.3.0: {}
 
   pirates@4.0.6: {}
+
+  pocketbase@0.21.5: {}
 
   postcss-import@15.1.0(postcss@8.4.47):
     dependencies:
