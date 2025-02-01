@@ -7,17 +7,17 @@ export const currentUser = writable(pb.authStore.model);
 export const userCollection = pb.collection('Users');
 
 pb.authStore.onChange((auth) => {
-  console.log('AuthStore changed', auth);
-  currentUser.set(pb.authStore.model);
+	console.log('AuthStore changed', auth);
+	currentUser.set(pb.authStore.model);
 });
 
 currentUser.subscribe((user) => {
-  console.log('Current user changed', user);
-  if (user) {
-    goto('/chat');
-  }
+	console.log('Current user changed', user);
+	if (user) {
+		goto('/chat');
+	}
 });
 
 export async function clearSession() {
-  pb.authStore.clear();
+	pb.authStore.clear();
 }
