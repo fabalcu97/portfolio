@@ -12,10 +12,11 @@
 		messages = await getMessages();
 		unsubscribe = await messagesCollection.subscribe<Message>('*', async ({ action, record }) => {
 			switch (action) {
-				case 'create':
+				case 'create': {
 					const user = await userCollection.getOne(record.sentBy);
 					messages = [{ ...record, user: { username: user.username, id: user.id } }, ...messages];
 					return;
+				}
 				default:
 					return;
 			}

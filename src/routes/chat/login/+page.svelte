@@ -5,6 +5,7 @@
 	import { errorToast, successToast } from '$lib/toast';
 
 	import Container from 'chat/container.svelte';
+	import { ClientResponseError } from 'pocketbase';
 
 	let email = '';
 	let password = '';
@@ -16,8 +17,12 @@
 			await pb.collection('users').authWithPassword(email, password);
 			goto('/chat');
 			successToast('Welcome!');
-		} catch (error: any) {
-			errorToast(error.response.message);
+		} catch (error) {
+			if (error instanceof ClientResponseError) {
+				errorToast(error.response.message);
+			} else {
+				errorToast('Something went wrong.');
+			}
 		} finally {
 			isLoading.set(false);
 		}
