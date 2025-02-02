@@ -8,8 +8,8 @@
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"lint": "prettier --check src && eslint src",
-		"format": "prettier --write src",
+		"lint": "prettier --check . && eslint --config eslint.config.js",
+		"format": "prettier --write .",
 		"typegen": "pnpx pocketbase-typegen --env --out src/types/pocketbase.d.ts"
 	},
 	"devDependencies": {

@@ -5,6 +5,7 @@
 
 	import Input from 'chat/Input.svelte';
 	import Container from 'chat/container.svelte';
+	import { ClientResponseError } from 'pocketbase';
 
 	let username = '';
 	let email = '';
@@ -27,7 +28,9 @@
 			await userCollection.authWithPassword(email, password);
 			successToast('Welcome!');
 		} catch (error) {
-			registerErrors = (error as any).response.data;
+			if (error instanceof ClientResponseError) {
+				registerErrors = error.response.data;
+			}
 		} finally {
 			isLoading.set(false);
 		}

@@ -21,8 +21,8 @@ export async function getMessages() {
 			...m,
 			user: { username: m.expand?.sentBy.username, id: m.expand?.sentBy.id }
 		}));
-	} catch (error: any) {
-		if (error.originalError.code === 20) {
+	} catch (error: unknown) {
+		if ((error as { originalError: { code: number } }).originalError.code === 20) {
 			return [];
 		}
 		console.error({ error });
@@ -37,7 +37,7 @@ export async function createMessage(text: string) {
 			sentBy: get(currentUser)?.id,
 			text
 		});
-	} catch (_error: unknown) {
+	} catch {
 		errorToast('Something went wrong, please try again');
 	}
 }
